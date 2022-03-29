@@ -1,0 +1,352 @@
+             pestpp-glm 5.0.11
+
+    by The PEST++ Development Team
+
+
+
+version: 5.0.11
+binary compiled on Sep 15 2021 at 10:05:14
+
+using control file: "test.pst"
+
+in directory: "/homeb/mega/professor-ufal/pesquisa/programming/pest++/mycase_studies/simple_program"
+on host: "marcos-Nitro-AN515-52"
+
+Note: 3 unused lines in pest control file:
+  -->  line number 6: '10.0 -2.0 0.3 0.01 10' 
+  -->  line number 10: '0 0 0' 
+  -->  line number 131: 'test.tpl rfa.dat' 
+
+    This software has been approved for release by the
+    U.S.Geological Survey(USGS).Although the software has 
+    been subjected to rigorous review, the USGS reserves the
+    right to update the software as needed pursuant to further
+    analysisand review.No warranty, expressed or implied, is 
+    made by the USGS or the U.S.Government as to the
+    functionality of the softwareand related material nor shall
+    the fact of release constitute any such warranty.
+    Furthermore, the software is released on condition that
+    neither the USGS nor the U.S.Government shall be held
+    liable for any damages resulting from its authorized 
+    or unauthorized use.
+
+
+pestmode:- 
+   estimation
+
+
+Case dimensions:- 
+    Number of parameters = 9
+    Number of adjustable parameters = 9
+    Number of observations = 100
+    Number of prior estimates = 0
+
+PEST Control Information
+    relparmax = 10
+    facparmax = 10
+    facorig = 0.001
+    phiredswh = 0.1
+    noptmax = 50
+    phiredstp = 0.005
+    nphistp = 4
+    nphinored = 4
+    relparstp = 0.004
+    nrelpar = 4
+
+
+    PEST++ OPTIONS: 
+
+...general options (used in multiple tools): 
+svd_pack: redsvd
+lambda_scale_fac: 0.75,1,1.1,
+forgive_unknown_args: 0
+max_run_fail: 3
+yamr_poll_interval: 1
+parameter_covariance: 
+observation_covariance: 
+hotstart_resfile: 
+overdue_resched_fac: 1.15
+overdue_giveup_fac: 100
+overdue_giveup_minutes: 1e+30
+condor_submit_file: 
+tie_by_group: 0
+par_sigma_range: 4
+enforce_tied_bounds: 0
+debug_parse_only: 0
+check_tplins: 1
+fill_tpl_zeros: 0
+additional_ins_delimiters: 
+random_seed: 358183147
+num_tpl_ins_threads: 1
+panther_agent_restart_on_error: 0
+panther_agent_no_ping_timeout_secs: -1
+panther_debug_loop: 0
+panther_echo: 1
+
+
+...pestpp-glm specific options:
+max_n_super: 1000000
+super_eigthresh: 1e-06
+n_iter_base: 1000000
+n_iter_super: 0
+super_relparmax: 0.1
+max_super_frz_iter: 20
+max_reg_iter: 20
+lambdas: 0.1,1,10,100,1000,
+iteration_summary: 1
+der_forgive: 1
+uncertainty: 1
+forecasts: 
+base_jacobian: 
+glm_num_reals: 0
+jac_scale: 1
+glm_normal_form: DIAG
+glm_debug_der_fail: 0
+glm_debug_lamb_fail: 0
+glm_debug_real_fail: 0
+glm_accept_mc_phi: 0
+glm_rebase_super: 0glm_iter_mc: 0global_opt: de
+de_f: 0.8
+de_cr: 0.9
+de_pop_size: 40
+de_max_gen: 100
+de_dither_f: 1
+
+...pestpp-swp options:
+sweep_parameter_csv_file: 
+sweep_output_csv_file: sweep_out.csv
+sweep_chunk: 500
+sweep_forgive: 0
+sweep_base_run: 0
+
+...pestpp-opt options:
+opt_objective_function: 
+opt_coin_log: 1
+opt_skip_final: 0
+opt_std_weights: 0
+opt_stack_size: 0
+opt_par_stack: 
+opt_obs_stack: 
+opt_decision_variable_groups: 
+opt_external_variable_groups: 
+opt_constraint_groups: 
+opt_risk: 0.5
+opt_iter_derinc_fac: 1
+opt_direction: 1
+opt_iter_tol: 0.001
+opt_recalc_fosm_every: 1
+opt_include_bnd_pi: 1
+
+...pestpp-ies options:
+ies_parameter_ensemble: 
+ies_observation_ensemble: 
+ies_restart_parameter_ensemble: 
+ies_restart_observation_ensemble: 
+ies_use_approximate_solution: 1
+ies_lambda_mults: 0.1,1,10,
+ies_initial_lambda: -999
+ies_use_approx: 1
+ies_subset_size: 4
+ies_reg_factor: 0
+ies_verbose_level: 0
+ies_use_prior_scaling: 0
+ies_num_reals: 50
+ies_bad_phi: 1e+300
+ies_bad_phi_sigma: 1e+300
+ies_include_base: 1
+ies_use_empirical_prior: 0
+ies_group_draws: 0
+ies_enforce_bounds: 1
+ies_save_binary: 0
+ies_localizer: 
+ies_accept_phi_fac: 1.05
+ies_lambda_inc_fac: 10
+ies_lambda_dec_fac: 0.75
+ies_save_lambda_ensembles: 0
+ies_subset_how: RANDOM
+ies_localize_how: PARAMETERS
+ies_num_threads: -1
+ies_debug_fail_subset: 0
+ies_debug_fail_remainder: 0
+ies_debug_bad_phi: 0
+ies_debug_upgrade_only: 0
+ies_debug_high_subset_phi: 0
+ies_debug_high_upgrade_phi: 0
+ies_csv_by_reals: 1
+ies_autoadaloc: 0
+ies_autoadaloc_sigma_dist: 1
+ies_enforce_chglim: 0
+ies_center_on: 
+ies_no_noise: 0
+ies_drop_conflicts: 0
+ies_save_rescov:0
+ies_pdc_sigma_distance: -1
+
+pestpp-sen options: 
+gsa_method: MORRIS
+gsa_morris_pooled_obs: 0
+gsa_morris_obs_sen: 1
+gsa_morris_p: 4
+gsa_morris_r: 4
+gsa_morris_delta: 0.6666
+gsa_sobol_samples: 4
+gsa_sobol_par_dist: norm
+panther_agent_freeze_on_fail: 0
+
+
+
+Model command line(s):- 
+    ./photosynthesis
+
+Model interface files:-
+    template files:
+      test.ins
+    model input files:
+      simulated.dat
+
+    instruction files:
+    model output files:
+
+
+Parameter group information
+NAME            INCREMENT TYPE     DERIVATIVE INCREMENT    INCREMENT LOWER BOUND  FORCE CENTRAL     INCREMENT MULTIPLIER
+nl                    RELATIVE                     0.01                        0         SWITCH                        2
+pm                    RELATIVE                     0.01                        0         SWITCH                        2
+pho                   RELATIVE                     0.01                        0         SWITCH                        2
+
+
+
+Parameter information
+NAME         TRANSFORMATION        CHANGE LIMIT  INITIAL VALUE    LOWER BOUND    UPPER BOUND          GROUP          SCALE         OFFSET  DERIVATIVE COMMAND
+an1          log                     FACTOR              2            0.5              3             nl              1              0                   1
+bn1          log                     FACTOR            0.2           0.01            0.5             nl              1              0                   1
+apm          log                     FACTOR              2            0.1              3             pm          0.001              0                   1
+bpm          log                     FACTOR              8              1              9             pm          1e-05              0                   1
+cpm          log                     FACTOR            0.9           0.01              2             pm              1              0                   1
+dpm          log                     FACTOR            2.8           0.01              6             pm              1              0                   1
+cotf         log                     FACTOR            0.5            0.1            0.9            pho              1              0                   1
+alpha        log                     FACTOR            1.5            0.1              9            pho          1e-05              0                   1
+kext         log                     FACTOR           0.65            0.1            0.9            pho              1              0                   1
+
+
+
+Observation information
+NAME                                VALUE               GROUP              WEIGHT
+ar1                               40.4699                obs1                   1
+ar2                               46.9649                obs1                   1
+ar3                               58.5185                obs1                   1
+ar4                               37.1628                obs1                   1
+ar5                               44.0617                obs1                   1
+ar6                               35.4837                obs1                   1
+ar7                               54.2308                obs1                   1
+ar8                                45.099                obs1                   1
+ar9                               58.7377                obs1                   1
+ar10                              48.4337                obs1                   1
+ar11                              55.7475                obs1                   1
+ar12                              34.6593                obs1                   1
+ar13                              50.8313                obs1                   1
+ar14                              41.4504                obs1                   1
+ar15                                46.76                obs1                   1
+ar16                              51.2707                obs1                   1
+ar17                              50.5512                obs1                   1
+ar18                              52.1604                obs1                   1
+ar19                              44.0409                obs1                   1
+ar20                              58.3403                obs1                   1
+ar21                              47.6941                obs1                   1
+ar22                              46.6178                obs1                   1
+ar23                                44.85                obs1                   1
+ar24                              52.8316                obs1                   1
+ar25                              52.1424                obs1                   1
+ar26                              54.1578                obs1                   1
+ar27                              57.1524                obs1                   1
+ar28                              50.0017                obs1                   1
+ar29                              56.9749                obs1                   1
+ar30                              33.1381                obs1                   1
+ar31                               43.842                obs1                   1
+ar32                              50.2816                obs1                   1
+ar33                              51.1405                obs1                   1
+ar34                              48.0469                obs1                   1
+ar35                              45.3165                obs1                   1
+ar36                              37.2254                obs1                   1
+ar37                              36.8055                obs1                   1
+ar38                              46.6285                obs1                   1
+ar39                              44.0498                obs1                   1
+ar40                              41.1081                obs1                   1
+ar41                              45.9236                obs1                   1
+ar42                              51.1595                obs1                   1
+ar43                              46.8184                obs1                   1
+ar44                              43.7646                obs1                   1
+ar45                              48.7471                obs1                   1
+ar46                              42.9182                obs1                   1
+ar47                               36.691                obs1                   1
+ar48                              45.4046                obs1                   1
+ar49                              59.1217                obs1                   1
+ar50                              43.8252                obs1                   1
+ar51                              57.9255                obs1                   1
+ar52                              34.0629                obs1                   1
+ar53                              53.3518                obs1                   1
+ar54                              47.2596                obs1                   1
+ar55                              52.4591                obs1                   1
+ar56                              41.9873                obs1                   1
+ar57                              49.5128                obs1                   1
+ar58                              45.6215                obs1                   1
+ar59                               50.671                obs1                   1
+ar60                              48.2174                obs1                   1
+ar61                              37.4754                obs1                   1
+ar62                              54.7751                obs1                   1
+ar63                              46.7921                obs1                   1
+ar64                              41.8007                obs1                   1
+ar65                              43.8998                obs1                   1
+ar66                              55.3119                obs1                   1
+ar67                              48.4956                obs1                   1
+ar68                              51.5572                obs1                   1
+ar69                              42.6302                obs1                   1
+ar70                              45.6614                obs1                   1
+ar71                              54.9505                obs1                   1
+ar72                              56.6879                obs1                   1
+ar73                               34.245                obs1                   1
+ar74                              51.5597                obs1                   1
+ar75                              47.4879                obs1                   1
+ar76                              53.7476                obs1                   1
+ar77                               48.961                obs1                   1
+ar78                              48.0702                obs1                   1
+ar79                              35.6994                obs1                   1
+ar80                              49.0853                obs1                   1
+ar81                              39.9589                obs1                   1
+ar82                              55.5523                obs1                   1
+ar83                               45.774                obs1                   1
+ar84                              47.2158                obs1                   1
+ar85                              57.6743                obs1                   1
+ar86                               46.075                obs1                   1
+ar87                              40.5915                obs1                   1
+ar88                              52.6786                obs1                   1
+ar89                              41.6856                obs1                   1
+ar90                              55.0289                obs1                   1
+ar91                              51.8268                obs1                   1
+ar92                               41.084                obs1                   1
+ar93                              43.3147                obs1                   1
+ar94                              56.1626                obs1                   1
+ar95                              48.4459                obs1                   1
+ar96                              45.4373                obs1                   1
+ar97                               37.748                obs1                   1
+ar98                              38.1192                obs1                   1
+ar99                              50.5224                obs1                   1
+ar100                             56.7599                obs1                   1
+
+
+
+Prior information
+
+   no prior information provided
+
+
+
+PEST SVD Information
+    maxsing = 1000000
+    eigthresh = 1e-06
+
+
+
+
+
+control file parsing error: error in model interface file access:model input/output error:number of instruction files = 0

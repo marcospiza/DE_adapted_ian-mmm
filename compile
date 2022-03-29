@@ -1,0 +1,5 @@
+gfortran -c mo_vartypes.f90
+gfortran -c readpareopt.f90
+gfortran -c photosynthesis.f90 
+gfortran -c moDE.f95
+gfortran test2.f90 mo_vartypes.o readpareopt.o photosynthesis.o moDE.o -o test2 -L. libttutil.a 

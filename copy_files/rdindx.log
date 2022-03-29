@@ -1,0 +1,10 @@
+
+ Error(s) or Warning(s) while reading from rfa.dat
+
+ Line Error text                               Somewhere here
+ ==== ==========                               ==============
+    7 Without =, a next name is expected       [ 9.9682435]
+                                                 ^-------^
+
+
+ Number of errors in data file RFA.DAT:   1

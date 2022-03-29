@@ -1,0 +1,13 @@
+An1 = 1.85           ! g/m2
+Bn1 = 0.167          ! m2/m2
+Apm = 1.4243e-3      !  (CO2 d-1)
+Bpm   = 7.656e-5     ! (g CO2 m-2 d-1)
+Cpm   = 0.5774       ! (m2 g-1)
+Dpm   = 2.13         ! (-) 
+CoTF  = 0.41         ! -
+alpha = 1.088e-5     ! -
+kext  = 0.58         ! - 
+IAF   = 3.0          !m2/m2
+
+***--- Parameters to be optmized -----------
+PoptName = 'An1', 'Bn1', 'Apm', 'Bpm', 'Cpm', 'Dpm','kext'

@@ -1,0 +1,139 @@
+pcf
+* control data
+restart estimation
+9 100 3 0 1
+1 1 single point 1
+10.0 -2.0 0.3 0.01 10
+10.0 10.0 0.001
+0.1
+50 0.005 4 4 0.004 4
+0 0 0
+* parameter groups
+nl  relative 0.01 0.0 switch 2.0 parabolic 
+pm  relative 0.01 0.0 switch 2.0 parabolic
+pho relative 0.01 0.0 switch 2.0 parabolic
+* parameter data
+an1     log  factor  2.0   0.5    3.0  nl  1.0 0.0
+bn1     log  factor  0.2   0.01   0.5  nl  1.0 0.0
+apm     log  factor  2.0   0.1    3.0  pm  1e-3 0.0
+bpm     log  factor  8.0   1.0    9.0  pm  1e-5 0.0   
+cpm     log  factor  0.9   0.01   2.0  pm  1.0  0.0   
+dpm     log  factor  2.8   0.01   6.0  pm  1.0  0.0
+cotf    log  factor  0.5   0.1    0.9  pho 1.0  0.0
+alpha   log  factor  1.5    0.1   9.0  pho 1e-5 0.0
+kext    log  factor  0.65  0.1    0.9  pho 1.0  0.0
+* observation groups
+obs1
+* observation data
+ar1     40.4699093  1.0    obs1
+ar2     46.9648505  1.0    obs1
+ar3     58.5184825  1.0    obs1
+ar4     37.1627869  1.0    obs1
+ar5     44.0616501  1.0    obs1
+ar6     35.4836552  1.0    obs1
+ar7     54.2307649  1.0    obs1
+ar8     45.0989997  1.0    obs1
+ar9     58.7377289  1.0    obs1
+ar10    48.4336615  1.0    obs1
+ar11    55.7474950  1.0    obs1
+ar12    34.6593131  1.0    obs1
+ar13    50.8312950  1.0    obs1
+ar14    41.4504226  1.0    obs1
+ar15    46.7600450  1.0    obs1
+ar16    51.2706967  1.0    obs1
+ar17    50.5512214  1.0    obs1
+ar18    52.1603825  1.0    obs1
+ar19    44.0409207  1.0    obs1
+ar20    58.3402764  1.0    obs1
+ar21    47.6940607  1.0    obs1
+ar22    46.6177813  1.0    obs1
+ar23    44.8500030  1.0    obs1
+ar24    52.8315554  1.0    obs1
+ar25    52.1423629  1.0    obs1
+ar26    54.1578369  1.0    obs1
+ar27    57.1524482  1.0    obs1
+ar28    50.0017463  1.0    obs1
+ar29    56.9748546  1.0    obs1
+ar30    33.1380824  1.0    obs1
+ar31    43.8419950  1.0    obs1
+ar32    50.2816245  1.0    obs1
+ar33    51.1405428  1.0    obs1
+ar34    48.0468519  1.0    obs1
+ar35    45.3164960  1.0    obs1
+ar36    37.2253543  1.0    obs1
+ar37    36.8054794  1.0    obs1
+ar38    46.6284598  1.0    obs1
+ar39    44.0497962  1.0    obs1
+ar40    41.1080709  1.0    obs1
+ar41    45.9236264  1.0    obs1
+ar42    51.1594881  1.0    obs1
+ar43    46.8183657  1.0    obs1
+ar44    43.7645509  1.0    obs1
+ar45    48.7471166  1.0    obs1
+ar46    42.9181842  1.0    obs1
+ar47    36.6910491  1.0    obs1
+ar48    45.4046127  1.0    obs1
+ar49    59.1216687  1.0    obs1
+ar50    43.8252029  1.0    obs1
+ar51    57.9254966  1.0    obs1
+ar52    34.0628861  1.0    obs1
+ar53    53.3518440  1.0    obs1
+ar54    47.2595971  1.0    obs1
+ar55    52.4590628  1.0    obs1
+ar56    41.9872973  1.0    obs1
+ar57    49.5127910  1.0    obs1
+ar58    45.6214934  1.0    obs1
+ar59    50.6710393  1.0    obs1
+ar60    48.2173978  1.0    obs1
+ar61    37.4754450  1.0    obs1
+ar62    54.7750861  1.0    obs1
+ar63    46.7921227  1.0    obs1
+ar64    41.8006580  1.0    obs1
+ar65    43.8998232  1.0    obs1
+ar66    55.3118963  1.0    obs1
+ar67    48.4956383  1.0    obs1
+ar68    51.5572106  1.0    obs1
+ar69    42.6302104  1.0    obs1
+ar70    45.6613758  1.0    obs1
+ar71    54.9505123  1.0    obs1
+ar72    56.6879223  1.0    obs1
+ar73    34.2449540  1.0    obs1
+ar74    51.5597020  1.0    obs1
+ar75    47.4878868  1.0    obs1
+ar76    53.7476130  1.0    obs1
+ar77    48.9610174  1.0    obs1
+ar78    48.0701844  1.0    obs1
+ar79    35.6993523  1.0    obs1
+ar80    49.0852800  1.0    obs1
+ar81    39.9589400  1.0    obs1
+ar82    55.5523048  1.0    obs1
+ar83    45.7740234  1.0    obs1
+ar84    47.2157829  1.0    obs1
+ar85    57.6743253  1.0    obs1
+ar86    46.0749947  1.0    obs1
+ar87    40.5914769  1.0    obs1
+ar88    52.6785932  1.0    obs1
+ar89    41.6856264  1.0    obs1
+ar90    55.0288886  1.0    obs1
+ar91    51.8268298  1.0    obs1
+ar92    41.0839528  1.0    obs1
+ar93    43.3146613  1.0    obs1
+ar94    56.1625609  1.0    obs1
+ar95    48.4459413  1.0    obs1
+ar96    45.4373316  1.0    obs1
+ar97    37.7479930  1.0    obs1
+ar98    38.1192378  1.0    obs1
+ar99    50.5223881  1.0    obs1
+ar100   56.7598566  1.0    obs1
+* model command line
+./photosynthesis
+* model inputoutput
+test.tpl rfa.dat
+* model output
+test.ins simulated.dat
+++ global_opt(de)
+++ de_pop_size(40)
+++ de_cr(0.9)
+++ de_max_gen(100)
+
+

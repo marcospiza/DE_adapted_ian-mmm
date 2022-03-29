@@ -1,0 +1,125 @@
+* Arquivo com os parametros de entrada do modelo QCANE 
+***********************************************************************************************
+
+***********************************************************************************************
+***********************************************************************************************
+* Parte 1 : Dados iniciais de entrada para o QCANE
+
+* Informe os dados de entrada , no lugar em que esta 'ceca_all.qca' coloque o seu arquivo de dados
+meteofilename = 'ceca2004.qca'  ! Nome do arquivo meteorológico
+
+* Informe a data do plantio
+plantdate     = 01-OCT-2003    ! Data de plantio
+
+* Informe o perido de simulação
+haverst     datehaverst       ! havesrt data correspondente
+ 1          01-OCT-2004 
+ 2          25-FEB-2006
+* Insira o valor da Latitude local
+lat   = -9.36                 ! Latitude local
+
+
+
+***********************************************************************************************
+
+
+
+***********************************************************************************************
+* Parte 2:Variaveis metereologica utilizadas na respiração e fenologia
+
+* Informar os valores das constantes de conversão da taxa de manutenção diária
+lambda =
+ 3.991E-6                     ! folha : constante de conversão da taxa respiração de manutenção diária para a folha, g c02 g-1 min-1	
+ 2.030E-6                     ! palmito : constante de conversão da taxa respiração de manutenção diária para o palmito, g c02 g-1 min-1
+ 8.52E-7                      ! colmo : constante de conversão da taxa respiração de manutenção diária para o colmo, g c02 g-1 min-1
+ 2.01E-6                      ! raiz : constante de conversão da taxa respiração de manutenção diária para o raiz, g c02 g-1 min-1
+
+*Informe a temperatura constantes para conversão da taxa de respiração de manunteção 
+
+gama  =
+ 0.046                        ! folha : temperatura constante para conversão da taxa respiração de manutenção da folha, °c
+ 0.054                        ! palmito : temperatura constante para conversão da taxa respiração de manutenção do, °c
+ 0.059                        ! colmo : temperatura constante para conversão da taxa respiração de manutenção do colmo, °c
+ 0.059                        ! raiz : temperatura constante para conversão da taxa respiração de manutenção da raiz, °c
+
+* Informe o valor da temperatura suportada pela variedade
+
+totm    = 40.0                ! Digite o valor da temperatura ideal suportada pela variedade (*C)
+
+* Insira os valores de temperatura Basal, Top e Máxima suportados pela variedade
+
+TBe     = 11.5                ! Temperatura Basal para emergência (C)
+TBt     = 12.4                ! Temperatura Basal para o perfilhamento  (C)
+TBm     = 12.7                ! Temperatura Basal para a maturação  (C)
+Top     = 30.0                ! Temperatura Top (C)
+Ts      = 40.0                ! Temperatura maxima	  (C)
+
+* Digite o valor da soma do grau de dia para: Emergência, perfilhamento e maturação da variedade 
+
+sumGDe  = 120.0               ! Tempo térmico diário acumulado para emergencia (*Cd)
+sumGDt  = 800.0               ! Tempo térmico diário acumulado para perfilhamento (*Cd)
+sumGDm  = 1132.0              ! tempo térmico diário acumulado para maturação (*Cd)
+
+***********************************************************************************************
+
+
+
+***********************************************************************************************
+* Parte 3: Variaveis da Fotossintese 
+
+* Informe o coeficiente de extinção
+kext  = 0.6                   ! Extition coefficient (-)
+
+* Infome o coenficiente de transmissão foliar
+CoTF  = 0.41                  ! Coeficiente de transmissão foliar
+
+* Informe o valor de Indice foliar (IAF) para cana planta e cana soca 
+IAF0  = 0.008                 ! Valor inicial de cana planta para IAF (m2/m2)
+IAF0ra  = 0.08                ! Valor inicial de cana soca para IAF (m2/m2)
+
+* Informe a Eficiência fotossintética da variedade
+alpha = 1.0e-5                ! photosynthetic efficiency (g CO2 J-1),
+***********************************************************************************************
+
+
+***********************************************************************************************
+* Parte 4: Variaveis empiricas para a relação entre o valor assintótico da folha
+* Taxa fotossintética na saturação da densidade do fluxo de luz
+* Variação de Nitrogenio com relação empírica do IAF
+
+Vsn   = 1.2                   ! Valores extremos na função cíclica sazonal do QCANE para variação de nitrogênio
+Vwn   = 0.75                  ! Valores extremos na função cíclica sazonal do QCANE para variação de nitrogênio
+d1gn  = 60                    ! dia do ano em que Vs é atingido pela variação de nitrogênio
+Apm   = 1.4243e-3             !  (CO2 d-1)
+Bpm   = 7.656e-5              ! (g CO2 m-2 d-1)
+Cpm   = 0.5774                ! (m2 g-1)
+Dpm   = 2.13                  ! (-)
+An1   = 1.85                  ! (g m-2)
+Bn1   = 0.167                 ! (m2 m-2) 
+***********************************************************************************************
+
+
+***********************************************************************************************
+*Parte 5: Variaveis de taxa de crescimento
+
+Vsnc    = 446.0               ! g / m2 Valores extremos na função cíclica sazonal do QCANE para transformação de matéria seca do palmito para cana
+Vwnc    = 227.0               ! g/m2   Valores extremos na função cíclica sazonal do QCANE para transformação de matéria seca do palmito para cana
+d1gnc   = 0.0                 ! /349 (-)  dia do ano em que Vs é alcançado para transformação de matéria seca do colmo em cana
+apsi    = 0.5                 ! parâmetro da função logística para taxa de crescimento de fibra em cana (-) 
+bpsi    = 499.0               ! parâmetro da função logística para taxa de crescimento de fibra em cana (-) 
+mi      = 0.34                ! parâmetro da função logística para taxa de crescimento de fibra em cana (/*C) 
+Cfl     = 0.87                ! concentração de fibras na folha (g/g)
+Cfn     = 0.66                ! concentração de fibras no palmito (g/g)
+Cfr     = 0.80                ! concentração de fibras na raiz (g/g)
+Csl     = 0.05                ! concentração de açúcar na folha (g/g)
+Csn     = 0.25                ! concentração de açúcar no palmito (g/g)
+Csr     = 0.11                ! concentração de açúcar na raiz (g/g)
+lambdaphi = 0.23              ! parâmetro no coeficiente Phi para calcular a taxa de senesce foliar 
+agc      = 0.976              ! coeficiente na função gc para dar conta de outras substâncias contidas na cana (-)
+bgc      = 11.79              ! coeficiente na função gc para dar conta de outras substâncias contidas na cana (-)
+aLma     = 85.5               ! interceptar o coeficiente da relação linear entre Lma e tempo (g/m2)
+bLma     = 0.0863             ! inclinação do coeficiente da relação linear entre Lma e tempo  (g/m2 d)
+adn      = 0.03               ! parâmetro na equação senescência do palmito (°Cd)
+bdn      = 1500.0             ! parâmetro na equação senescência do palmito (°Cd)
+adr      = 2.0                ! parâmetro na taxa hiperbólica senescência da raiz (g/m2 d)
+bdr      = 2000.0             ! parâmetro na taxa hiperbólica senescência da raiz (g/m2)
