@@ -55,8 +55,13 @@ CALL Diff_Evol(npOpt, NP, betaLB, betaUB, T, Fl, Fh, Cr, 1, BetaHat,fval,YobsPb,
 !    CALL Diff_Evol( nop, NP, betaLB, betaUB, T, Fl, Fh, Cr, 1, BetaHAT, fval )
         ! -- SUBROUTINE Diff_Evol( nop, NP, LB, UB, T, F_lo, F_hi, Cr, PD, BH_best, F_best)
 
+PoptVec = BetaHAT
+
 PRINT*, "------"
 PRINT*, fval, BetaHat
+do i = 1, size(BetaHat)
+  PRINT*, BetaHat(i)
+enddo
 PRINT*, "------"
 
 ! Calculate time:
@@ -70,7 +75,7 @@ PRINT*, 'DONE ! ! ! ! ! ! ! '
 ! Results of paramters optimized
 open(5,file="de-result.out",status="replace")
 
-write(5,"(A)")"Parameter values measured and optmized"
+write(5,"(A)")"Parameter  optmized   measured"
 do i=1,size(PoptName)
    namem = PoptName(i)
    write(5,"(A6, 2E12.3)")namem,pvec//namem,pobs//namem

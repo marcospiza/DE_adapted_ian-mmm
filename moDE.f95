@@ -117,15 +117,15 @@ DO while (nn <= NP) ! -  - @ - - Grid Loop for initial generation - - @ - -
 
    ! Calculate the function value:
           CALL Obj_Ftn( nop, THETA(:, nn ), fval,Vobs,Xin)
-         ! print"(7F10.5)",pvec//"An1",pvec//"Bn1",pvec//"Apm",&
-         !               &pvec//"Bpm",pvec//"Cpm",pvec//"Dpm",&
-         !               &pvec//"Kext"
+!          print"(7F10.5)",pvec//"An1",pvec//"Bn1",pvec//"Apm",&
+!                        &pvec//"Bpm",pvec//"Cpm",pvec//"Dpm",&
+!                        &pvec//"Kext"
           F_theta( nn )   = fval
-         !print*,"fval : ",fval, ResPM
+          
+!          print*,"fval : ",fval, ResPM
           nn = nn + 1
         endif
 END DO ! -  - @ - - end grid Loop for initial gen - - @ - -
-
 F_best  = MINVAL( F_theta(:) )
 
 gen_do: DO tt = 1, T !- - generation loop - - - - - - - - - - - - - - - - - - - -
@@ -231,8 +231,8 @@ END IF
                             do while(.not. ResPM )
                                CALL RANDOM_NUMBER( Z0 )
                                THETA( :, nn ) = Z0 * range + LB
-                               ii = ii + 1
-                               print*,ii
+                                 ii = ii + 1
+                               !print*,ii
                                call subresPm(ResPM,THETA(:, nn))
                             enddo
 

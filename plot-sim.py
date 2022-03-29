@@ -36,9 +36,9 @@ for l in lines[i+1:]:
     PBopt.append(float(l[2]))
 
     
-x_fig = 20.0 / 2.54
-y_fig = 10.0 / 2.54
-font = {'size' : 14}
+x_fig = 40.0 / 2.54
+y_fig = 20.0 / 2.54
+font = {'size' : 16}
 matplotlib.rc('font', **font)
 
 
@@ -49,10 +49,28 @@ ax = fig.add_subplot(gs[0])
 ax1 = fig.add_subplot(gs[1])
 
 
-ax.scatter(RFA,PBobs)
-ax.scatter(RFA,PBopt)
+ax.scatter(RFA,PBobs,facecolor='none',edgecolor='C0',s=80)
+ax.scatter(RFA,PBopt,marker="v",facecolor='none',edgecolor='C1',s=80)
 
-ax1.scatter(PBopt,PBobs)
+ax.set_xlabel("RFA, MJ m$^{-2}$ d$^{-1}$")
+ax.set_ylabel("PB, g CO$_2$ m$^{-2}$")
+
+ax1.scatter(PBobs,PBopt,facecolor='none',edgecolor='C0',s=80)
+ax1.set_ylabel(r"PB$_{\mathrm{opt}}$, g CO$_2$ m$^{-2}$")
+ax1.set_xlabel(r"PB$_{\mathrm{obs}}$, g CO$_2$ m$^{-2}$")
+
+# -------------Calculating correlation coefficient
+corr_matrix = np.corrcoef(PBobs, PBopt)
+corr = corr_matrix[0,1]
+R_sq = corr**2
+
+str_R =  "$r^2$ = " + " {:15.3f}".format(R_sq)
+print(str_R)
+#ax1.text()
+
+
+
+
 
 erro = 0
 for ibs,ipt in zip(PBobs,PBopt):
@@ -60,3 +78,4 @@ for ibs,ipt in zip(PBobs,PBopt):
 #    print(erro)
 print("------------------------------")
 print( np.sqrt(erro)/len(PBobs),len(PBobs))
+plt.savefig("error_comp.tiff",dpi=800,bbox_inches='tight')
