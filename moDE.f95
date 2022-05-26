@@ -143,11 +143,11 @@ gen_do: DO tt = 1, T !- - generation loop - - - - - - - - - - - - - - - - - - - 
                 CALL RANDOM_NUMBER( Z1 )
                 spouse(1) = FLOOR( Z1 * RNP + 1.0D0)
             END DO
-            DO WHILE (( spouse(2) == nn ) .AND. ( spouse(2) == spouse(1)))
+            DO WHILE (( spouse(2) == nn ) .or. ( spouse(2) == spouse(1)))
                 CALL RANDOM_NUMBER( Z1 )
                 spouse(2) = FLOOR( Z1 * RNP + 1.0D0)
             END DO
-            DO WHILE (( spouse(3) == nn ) .AND. ( spouse(3) == spouse(1)) .AND. ( spouse(3) == spouse(2)))
+            DO WHILE (( spouse(3) == nn ) .or. ( spouse(3) == spouse(1)) .or. ( spouse(3) == spouse(2)))
                 CALL RANDOM_NUMBER( Z1 )
                 spouse(3) = FLOOR( Z1 * RNP + 1.0D0)
             END DO
