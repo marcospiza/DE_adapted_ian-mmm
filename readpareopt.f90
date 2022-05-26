@@ -16,9 +16,12 @@ integer:: pos1,pos2 ! Get position to make pointers
 integer:: stat
 
 
-! Open the file form tuttil subroutine
+! Open the parameter file with tuttil subroutine and store in pvec variable
 call rdinit(10,20,paramfile)
 
+!------- pvec contains all parameter values needed for running the program
+!------- pvec is vector of par type (real pointer, character)
+! ------ See readrdval in mo_vartypes: assigns the real and character value
 call readrdval(pvec,"An1",ip)
 call readrdval(pvec,"Bn1",ip) 
 call readrdval(pvec,"Apm",ip) 
@@ -32,11 +35,11 @@ call readrdval(pvec,"IAF",ip)
 
 ! Rreading the parameter names to be optmized
 allocate(dummyOpt(maxpar))
-
 call rdacha("PoptName",dummyOpt,maxpar,npOpt)
 
 allocate(PoptName(npOpt))
-   PoptName = dummyOpt(1:npOpt)
+PoptName = dummyOpt(1:npOpt)
+
 deallocate(dummyOpt)
 
 ! Closing the files from tuttil
@@ -52,6 +55,8 @@ allocate(BetaHAT(npOpt))
 ! Reading the paroptfile containg set up values for each parameter used in optmizations
 call rdinit(10,20,paroptfile)
 
+!--- pdefV pini type (name:character, vi:R*8,vmin:R*8,vmax:R*8).
+!--- see readpsetup in mo_vartypes.f90: uses tuttil to read and stores the values in pdefV 
 call readpsetup(pdefV,"An1",isetup)
 call readpsetup(pdefV,"Bn1",isetup) 
 call readpsetup(pdefV,"Apm",isetup) 
@@ -70,7 +75,7 @@ if (stat == 0) close(1234, status='delete')
 
 do i= 1,npOpt
   ! Making pointers of pvec%val with PoptVec 
-  ! Now changing Paramters to te optimized in PoptVec are linked to their respective pvec
+  ! Now changing Paramters to be optimized in PoptVec are linked to their respective pvec
    pos1 = posch(PoptName(i),pvec%name) 
    pvec(pos1)%val => PoptVec(i)
 

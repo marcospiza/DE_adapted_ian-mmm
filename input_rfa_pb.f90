@@ -2,6 +2,22 @@ program rfa_program
 ! Compilation:
 ! gfortran input_rfa_pb.f90 photosynthesis.o -o input_rfa_pb 
 
+!========================= Interface files ========================================================
+! Input files:
+!          1. parameters.dat
+! Output files:
+!          1. input.dat
+!
+! ==================  Purpose and main tasks ======================================================
+! Purpose: Creates a file with RFA x photosynthesis to be used for testing optimzations
+! Steps: 
+!     1. RFA is genetatend randomly between xx and yy
+!     2. Photosynhesys is simulated with function given in QCANE model
+!     3. Parameters are read from "parameters.dat" with tutill library
+!     4. In "parameters.dat" is also informed which parameters will be optmized
+!     5. Files are save into "input.dat", which is used as the "measured" values in optimizations"
+!==================================================================================================
+
 implicit none
 integer i
 real*8 r,RFA,IAF

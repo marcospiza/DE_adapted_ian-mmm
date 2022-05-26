@@ -1,6 +1,20 @@
 module moVarType
 implicit none
 
+
+!========================= Interface files ========================================================
+! Input files:
+!          
+! Output files:
+!          
+!
+! ==================  Purpose and main tasks ======================================================
+! Purpose: Define most variables, funcions/subrotines and procedures and types
+! Steps: 
+
+!==================================================================================================
+
+
 ! Precision Parameters: - - - - - - - - - - - - - - - - - - - - - - - - - -
 INTEGER, PARAMETER               :: dp = SELECTED_REAL_KIND(15, 307)
 INTEGER, PARAMETER               :: sp = SELECTED_REAL_KIND(6, 37)
@@ -15,10 +29,13 @@ integer                          :: ip     = 0               ! counter of parame
 integer                          :: nobs   = 0               ! counter of parameters, in the input with observed parameters 
 integer                          :: isetup = 0               ! counter of parameter names in paroptfile
 integer                          :: npOpt                    ! number of paramters to be optmized
+
 character(len=10),allocatable,&                              !Paramter names to be optimized
                 & dimension(:)   ::dummyOpt, PoptName        !the dummy is first used
+
 real*8,allocatable,dimension(:),&
                       &    target:: PoptVec                  ! Vector to be optimized. This vector is target to
+
 real*8,allocatable,dimension(:)  :: RFA                      ! PAR for input data
 real*8,allocatable,dimension(:)  :: YobsPb                   ! Observed Pb
 
@@ -41,7 +58,7 @@ real(dp),allocatable,dimension(:) :: BetaUB, BetaLB, BetaHAT
 !--------------------  Defintion of types -----------------------
 type pini
   character(len=10):: name
-  real*8:: vi,vmin,vmax                        ! Default values for parameters used in optimization 
+  real*8:: vi,vmin,vmax                          ! Default values for parameters used in optimization 
 end type                                         !vi: initial value; vmin and vmax: minimum and maximum values
 
 type par
@@ -188,9 +205,11 @@ End Function to_upper
 !------------------- ****---------------------------------------
 
 
-! Subrotine to read parameter from the file using ttutil subroutine and save 
-! in the parType vector variable
 subroutine readrdval(parType,parname,ip)
+!==================================================================================
+! Reads parameter from the file paramfile  using ttutil subroutine and stores 
+! in the parType vector variable >= pvec; par type(real*8 pointer, characater)
+!===================================================================================
 implicit none
 type(par),dimension(:)     :: parType
 character(len=*),intent(in):: parname
